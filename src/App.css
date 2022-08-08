@@ -40,3 +40,42 @@
   color: white;
   padding-left: 15px;
 }
+
+/* Create Post */
+.createPostPage{
+  width: 100vw;
+  padding: 45px;
+  display: flex;
+  justify-content: center;
+}
+.formContainer{
+  text-align: start;
+  max-width: 500px;
+  border: 5px solid rgb(89, 160, 253);
+  position: relative;
+  padding: 15px;
+}
+.formContainer button{
+  color: white;
+  background: rgb(89, 160, 253);
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
+.formContainer button:hover{
+  background: rgb(131, 182, 248);
+  cursor: pointer;
+}
+.formContainer input{
+  width: 96.5% !important;
+  max-width: 500px;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(71, 71, 71);
+}
+
+span{
+  color: red;
+}

@@ -6,10 +6,10 @@ function Home() {
     const [listOfPosts, setListOfPosts] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3001/posts')
+      axios.get('http://localhost:3001/posts')
         .then((resp) => {
         setListOfPosts(resp?.data)
-        })
+      })
     }, [])
 
   return (
