@@ -4,6 +4,7 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding-top: 50px;
 }
 
 .post{
@@ -39,6 +40,27 @@
   height: 60px;
   color: white;
   padding-left: 15px;
+}
+
+/* Navbar */
+.navbar{
+  background: rgb(75, 75, 236);
+  width: 100vw;
+  top: 0;
+  position: absolute;
+  display: flex;
+  padding: 15px;
+  padding-left: 100px;
+  justify-content: start;
+}
+.navbar a{
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  margin: 0 15px;
+}
+.navbar a:hover{
+  transform: scale(1.05);
 }
 
 /* Create Post */
@@ -78,4 +100,15 @@
 
 span{
   color: red;
+}
+
+/* Post Page */
+.postPage{
+  display: flex;
+}
+.leftSide, .rightSide{
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

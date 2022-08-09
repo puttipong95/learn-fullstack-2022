@@ -2,9 +2,11 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function CreatePost() {
 
+  let history = useNavigate()
   const initialValues = {
     title: '',
     postText: '',
@@ -15,12 +17,13 @@ function CreatePost() {
     axios.post('http://localhost:3001/posts', data)
       .then((resp) => {
         console.log('resp', resp)
+        history('/')
       })
   }
 
   const validationSchema = Yup.object().shape({
     title: Yup.string().required('You must input a Title!'),
-    postText: Yup.string().required(),
+    postText: Yup.string().required('You must input Post!'),
     username: Yup.string().min(3).max(15).required()
   })
 
