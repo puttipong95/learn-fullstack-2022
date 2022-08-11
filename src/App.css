@@ -106,9 +106,43 @@ span{
 .postPage{
   display: flex;
 }
-.leftSide, .rightSide{
+.leftSide{
   width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.rightSide{
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+.addCommentContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.addCommentContainer input{
+  border-radius: 8px;
+  border: 1px solid gray;
+  padding: 15px;
+}
+.addCommentContainer button{
+  margin-top: 8px;
+  color: white;
+  background: rgb(75, 75, 236);
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+}
+.listOfComments{
+  padding: 15px;
+}
+
+.listOfComments .comment{
+  text-align: start;
+  margin-top: 15px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 15px;
 }
