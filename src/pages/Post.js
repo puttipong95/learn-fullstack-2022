@@ -26,11 +26,16 @@ function Post() {
             commentBody: newComment,
             PostId: id
         }
-        axios.post('http://localhost:3001/comments', data)
+        const headers = {headers: {accessToken: sessionStorage.getItem('accessToken')}}
+        axios.post('http://localhost:3001/comments', data, headers)
         .then((resp) => {
-            const commentRoAdd = {commentBody: newComment}
-            setComments([...comments, commentRoAdd])
-            setNewComment('')
+            if(resp.data.error){
+                alert(resp.data.error?.message)
+            }else{
+                const commentRoAdd = {commentBody: newComment}
+                setComments([...comments, commentRoAdd])
+                setNewComment('')
+            }
         })
     }
 

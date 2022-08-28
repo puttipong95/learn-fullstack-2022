@@ -146,3 +146,26 @@ span{
   border-radius: 8px;
   padding: 15px;
 }
+
+/* Login page */
+.login-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 94vh;
+}
+.login-container input{
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 3px solid rgb(75, 75, 236);
+}
+.login-container button{
+  background: rgb(75, 75, 236);
+  width: 100%;
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
