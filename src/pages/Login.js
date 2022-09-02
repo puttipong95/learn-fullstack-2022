@@ -1,11 +1,13 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../helpers/AuthContext'
 
 function Login() {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const { setAuthState } = useContext(AuthContext)
   let history = useNavigate()
 
   const login = () => {
@@ -15,7 +17,12 @@ function Login() {
       if(res.data.error){
         alert(res.data.error)
       }else{
-        sessionStorage.setItem('accessToken', res.data)
+        localStorage.setItem('accessToken', res.data.token)
+        setAuthState({
+          username: res.data.username,
+          id: res.data.id,
+          status: true
+        })
         history('/')
       }
     })
