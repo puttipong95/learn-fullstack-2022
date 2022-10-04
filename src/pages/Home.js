@@ -1,17 +1,25 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../helpers/AuthContext'
 
 function Home() {
 
     const [listOfPosts, setListOfPosts] = useState([])
+    const { authState } = useContext(AuthContext)
     let history = useNavigate()
 
     useEffect(() => {
-      axios.get('http://localhost:3001/posts')
-        .then((resp) => {
-        setListOfPosts(resp?.data)
-      })
+
+      if(!localStorage.getItem('accessToken')){
+        history('/login')
+      }else{
+        axios.get('http://localhost:3001/posts')
+          .then((resp) => {
+          setListOfPosts(resp?.data)
+        })
+      }
+      
     }, [])
 
     const likeAPost = (PostId) => {
